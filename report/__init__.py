@@ -29,8 +29,8 @@ import account_partner_ledger
 #import invoice
 import account_print_invoice
 import account_print_invoice2
-import account_print_invoicenc
-import account_print_invoicend
+import account_print_nc
+import account_print_nd
 #import overdue
 import account_print_overdue
 import account_aged_partner_balance
