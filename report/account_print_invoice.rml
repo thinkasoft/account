@@ -3,8 +3,13 @@
   <template title="Invoices" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
     <pageTemplate id="first">
             <frame id="first" x1="33.0" y1="-125.0" width="530" height="786"/>
+	    <frame id="fecha" x1="13.0cm" y1="21.0cm" width="5cm" height="1cm"/>
+	    <frame id="cliente" x1="4.0cm" y1="18.0cm" width="15cm" height="1cm"/>
+	    <frame id="direccion" x1="4.0" y1="17.0cm" width="15cm" height="1cm"/>
+
 
    <pageGraphics>
+
     <place x="15.0mm" y="-1.0mm" width="270.0mm"  height="54mm">
     <blockTable colWidths="45.0,405.0,85.0" style="Table10">
       <tr>
@@ -14,7 +19,7 @@
           </para>
         </td>
         <td>
-          <para style="Comentario">[[o.amount_to_text.replace("M. E.","").replace("VEB","CON")]]</para> 
+          <para style="Comentario">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
         </td>
         <td>
           <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed) ]]</para>
@@ -70,8 +75,6 @@
           <para style="terp_default_9"></para>
         </td>
         <td>
-
-
 		<blockTable colWidths="-30.0,108.0" style="Table7">
       		<tr>
         		<td>
@@ -83,10 +86,8 @@
 			</td>
       		</tr>
     		</blockTable>
-
         </td>
       </tr>
-
       <tr>
         <td>
           <para style="terp_default_8">
@@ -100,9 +101,33 @@
           <para style="terp_default_Right_9"><b>[[ formatLang(o.amount_total) ]]</b></para>
         </td>
       </tr>
-      
         </blockTable>
-    </place>
+        <nextFrame/>
+      </place>
+
+      
+     <drawString x="0.8cm" y="23.0cm">
+         Valencia
+     </drawString>
+     <drawString x="3.1cm" y="23.0cm">
+         [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]]
+     </drawString>
+ 
+     <drawString x="4.1cm" y="23.0cm">
+         [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]]
+     </drawString>
+
+     <drawString x="5.1cm" y="23.0cm">
+         [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]
+     </drawString>
+       
+     <drawString x="5.6cm" y="22.4cm"> 
+          	[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]
+     </drawString>
+ 
+     <textBox x="5cm" y="22cm" boxWidth="14cm" boxHeight="0.6cm" fontSize="8" vAlign="Bottom" align="center" shrinkToFit="1" boxStrokeColor="blue" boxFillColor="yellow" lineWidth="2" borderSpec="right=-.2cm,0 left=0,.2cm under=-.2cm,0 over=0,.2cm">Prince Harry!</textBox>
+
+
     </pageGraphics>
     </pageTemplate>
   </template>
@@ -221,6 +246,7 @@
     <paraStyle name="comentario" rightIndent="150" LeftIndent="0" fontSize="8.0" leading="8" alignment="CENTER" spaceBefore="6.0" spaceAfter="9.0"/>
 
     <paraStyle name="terp_default_Right_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="titname" rightIndent="0.0" leftIndent="0.0" fontSize="12.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_Centre_8" rightIndent="0.0" leftIndent="0.0" fontSize="6.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_address" rightIndent="0.0" leftIndent="0.0" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_9" rightIndent="0.0" leftIndent="0.0" fontSize="6.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
@@ -235,23 +261,21 @@
     <paraStyle name="User Index 10" rightIndent="0.0" leftIndent="127.0"/>
     <paraStyle name="Preformatted Text" fontSize="10.0" leading="13" spaceBefore="0.0" spaceAfter="0.0"/>
     <images/>
+
+
   </stylesheet>
+
+
   <story>
   
     <para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
     <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
-    
-     <blockTable colWidths="65.0,25.0,25.0,65.0,320.0" style="Table7">
-      <tr>
-        <td><para style="terp_default_8"><b>Valencia</b></para></td>
-        <td><para style="terp_default_8"><b>[[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]] </b></para></td>
-        <td><para style="terp_default_8"><b> [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]] </b></para></td>
-        <td><para style="terp_default_8"><b>[[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]</b></para></td>
-        <td><para style="terp_default_8"><b></b></para></td>
+ 
 
-      </tr>
-    </blockTable>
-   <spacer length="5mm"/>
+
+
+   <spacer length="3mm"/>
+<!--
    <blockTable colWidths="140.0,373.0" style="Table10">
       <tr>
         <td>
@@ -263,13 +287,14 @@
           <para style="terp_default_8">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para>
           <para style="terp_default_8">
             <font color="white"> </font>
-          </para>
-         
+          </para>         
         </td>
       </tr>
     </blockTable>
-   
-   <spacer length="0,2mm"/>
+
+-->
+
+   <spacer length="2mm"/>
    <blockTable colWidths="70.0,450.0" style="Table10">
       <tr>
         <td>
@@ -278,7 +303,7 @@
           </para>
         </td>
        <td>
-          <para style="terp_default_8">[[ o.partner_id.street + o.partner_id.street2]]</para>
+          <condPageBreak height="12"/><para style="terp_default_8">[[ o.partner_id.street + o.partner_id.street2]]</para>
           <para style="terp_default_8">[[ o.partner_id.city + " " + o.partner_id.zip + " Venezuela" ]]</para>
           <para style="terp_default_8">
             <font color="white"> </font>
@@ -286,6 +311,7 @@
 
         </td>
       </tr>
+    <nextFrame/>
     </blockTable> 
     <para style="terp_default_8">
       <font color="white"> </font>
@@ -315,7 +341,7 @@
     </blockTable>
 
 
-<spacer length="8mm"/>
+<spacer length="20mm"/>
     <para style="comentario">"PRESTACION DEL SERVICIO DE 
 				TRANSPORTE CEMENTO ASFÁLTICO
                                          VER ANEXOS:" </para>
