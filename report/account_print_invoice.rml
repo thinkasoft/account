@@ -104,24 +104,24 @@ x rml openerp
       </place>
 
       
-     <drawString x="0.8cm" y="23.0cm">
+     <drawString x="0.5cm" y="23.5cm">
          Valencia
      </drawString>
-     <drawString x="3.1cm" y="23.0cm">
+     <drawString x="2.8cm" y="23.5cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]]
      </drawString>
  
-     <drawString x="4.1cm" y="23.0cm">
+     <drawString x="3.8cm" y="23.5cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]]
      </drawString>
 
-     <drawString x="5.1cm" y="23.0cm">
+     <drawString x="5cm" y="23.5cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]
      </drawString>
 
-	<place x="5.5cm" y="22cm" width="14cm"  height="1cm">
+	<place x="6cm" y="22.2cm" width="14cm"  height="1cm">
     		<blockTable colWidths="14cm" style="Table11">
-      			<tr><td><para style="titname" vAlign="BOTTOM">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
+      			<tr><td><para style="titname">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
 		</blockTable>
 	</place>
 
@@ -238,7 +238,7 @@ x rml openerp
     <paraStyle name="Index"/>
 
     <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
-    <paraStyle name="terp_default_8" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="10" alignment="LEFT" spaceBefore="0.7" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_8" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="1" spaceAfter="0"/>
     <paraStyle name="Footer"/>
     <paraStyle name="Horizontal Line" fontSize="6.0" leading="8" spaceBefore="0.0" spaceAfter="14.0"/>
 
@@ -248,10 +248,10 @@ x rml openerp
     <paraStyle name="terp_tblheader_General_Right" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="terp_tblheader_Details_Centre" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="terp_tblheader_Details_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
-    <paraStyle name="comentario" rightIndent="150" LeftIndent="0" fontSize="8.0" leading="8" alignment="CENTER" spaceBefore="6.0" spaceAfter="9.0"/>
+    <paraStyle name="comentario" rightIndent="185" LeftIndent="0" fontSize="8.0" leading="8" alignment="CENTER" spaceBefore="6.0" spaceAfter="9.0"/>
 
     <paraStyle name="terp_default_Right_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
-    <paraStyle name="titname" rightIndent="0.0" leftIndent="0.0" fontSize="12.0" leading="0" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="titname" rightIndent="0.0" leftIndent="0.0" fontSize="10.5" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_Centre_8" rightIndent="0.0" leftIndent="0.0" fontSize="6.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_address" rightIndent="0.0" leftIndent="0.0" fontSize="10.0" leading="13" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_9" rightIndent="0.0" leftIndent="0.0" fontSize="6.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
@@ -278,27 +278,9 @@ x rml openerp
  
 
    <spacer length="9mm"/>
-<!--
-   <blockTable colWidths="140.0,373.0" style="Table10">
-      <tr>
-        <td>
-          <para style="terp_default_8">
-            <font color="white"> </font>
-          </para>
-        </td>
-       <td>
-          <para style="terp_default_8">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para>
-          <para style="terp_default_8">
-            <font color="white"> </font>
-          </para>         
-        </td>
-      </tr>
-    </blockTable>
 
--->
-
-   <spacer length="2mm"/>
-   <blockTable colWidths="70.0,450.0" style="Table10">
+   <spacer length="0mm"/>
+   <blockTable colWidths="30.0,490.0" style="Table10">
       <tr>
         <td>
           <para style="terp_default_8">
