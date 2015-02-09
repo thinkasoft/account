@@ -16,7 +16,7 @@
           </para>
         </td>
         <td>
-          <para style="Comentario">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
+          <para style="terp_default_9">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
         </td>
         <td>
           <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed) ]]</para>
@@ -124,6 +124,12 @@ x rml openerp
       			<tr><td><para style="titname">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
 		</blockTable>
 	</place>
+
+	<place x="17.7cm" y="19.67cm" width="16cm"  height="1.5cm">
+                <blockTable colWidths="14cm" style="Table7">
+                        <tr><td><para style="terp_default_8"><b>[[ (o.partner_id.vat and ('        %s-%s-%s'%(o.partner_id.vat[2:3],o.partner_id.vat[3:11],o.partner_id.vat[11:12])) or removeParentNode('para'))  ]]</b></para></td></tr>
+                </blockTable>
+        </place>
 
     </pageGraphics>
     </pageTemplate>
@@ -303,14 +309,14 @@ x rml openerp
     <pto>
 
    <pto_header><!-- Must be after setLang() -->
-    <blockTable colWidths="335,293,170" style="Table10">
+<!--    <blockTable colWidths="335,293,170" style="Table10">
     <tr>"terp_default_8"
         <td><para style="terp_default_8"><b>[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]] </b></para></td>
         <td><para style="terp_default_8"><b>[[('%s'% (o.partner_id.phone) or removeParentNode('para')) ]]</b></para></td>
         <td><para style="terp_default_8"><b>[[ (o.company_id.partner_id.vat and ('        %s-%s-%s'%(o.company_id.partner_id.vat[2:3],o.company_id.partner_id.vat[3:11],o.company_id.partner_id.vat[11:12])) or removeParentNode('para')) ]]</b></para></td>
     
     </tr>
-    </blockTable>
+    </blockTable>-->
 
     </pto_header>
 
@@ -320,7 +326,7 @@ x rml openerp
 
         <td><para style="terp_default_8"><b>[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]] </b></para></td>
         <td><para style="terp_default_8"><b>[[('%s'% (o.partner_id.phone) or removeParentNode('para')) ]]</b></para></td>
-		<td><para style="terp_default_8"><b>[[ (o.partner_id.vat and ('        %s-%s-%s'%(o.partner_id.vat[2:3],o.partner_id.vat[3:11],o.partner_id.vat[11:12])) or removeParentNode('para')) ]]</b></para></td>
+		<td><para style="terp_default_8"><b></b></para></td>
       </tr>
     </blockTable>
 

@@ -7,7 +7,7 @@
 
    <pageGraphics>
 
-    <place x="15.0mm" y="-5mm" width="270.0mm"  height="54mm">
+    <place x="15.0mm" y="-7mm" width="270.0mm"  height="54mm">
     <blockTable colWidths="45.0,405.0,85.0" style="Table10">
       <tr>
         <td>
@@ -16,7 +16,7 @@
           </para>
         </td>
         <td>
-          <para style="Comentario">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
+          <para style="terp_default_9">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
         </td>
         <td>
           <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed) ]]</para>
@@ -104,26 +104,32 @@ x rml openerp
       </place>
 
       
-     <drawString x="0.1cm" y="24.3cm">
+     <drawString x="0.3cm" y="22.9cm">
          Valencia
      </drawString>
-     <drawString x="2.1cm" y="24.3cm">
+     <drawString x="2.7cm" y="22.9cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]]
      </drawString>
  
-     <drawString x="3.1cm" y="24.3cm">
+     <drawString x="3.6cm" y="22.9cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]]
      </drawString>
 
-     <drawString x="4.1cm" y="24.3cm">
+     <drawString x="4.8cm" y="22.9cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]
      </drawString>
 
-	<place x="6cm" y="23cm" width="14cm"  height="1cm">
+	<place x="6cm" y="21.8cm" width="14cm"  height="1cm">
     		<blockTable colWidths="14cm" style="Table11">
       			<tr><td><para style="titname" vAlign="BOTTOM">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
 		</blockTable>
 	</place>
+       
+        <place x="3.7cm" y="20.2cm" width="16cm"  height="1.5cm">
+                <blockTable colWidths="14cm" style="Table11">
+                        <tr><td><para style="direccion">[[ o.partner_id.street + " " + o.partner_id.street2 + " " + o.partner_id.city + " " + o.partner_id.zip + " " + o.partner_id.state_id.name + " Venezuela"  ]]</para></td></tr>
+                </blockTable>
+        </place>
 
     </pageGraphics>
     </pageTemplate>
@@ -249,7 +255,7 @@ x rml openerp
     <paraStyle name="terp_tblheader_Details_Centre" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="terp_tblheader_Details_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
     <paraStyle name="comentario" rightIndent="190" LeftIndent="0" fontSize="8.0" leading="8" alignment="CENTER" spaceBefore="6.0" spaceAfter="9.0"/>
-
+    <paraStyle name="direccion" rightIndent="0.0" leftIndent="0.0" fontSize="9.0" leading="14" alignment="LEFT" spaceBefore="0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_Right_8" rightIndent="0.0" leftIndent="0.0" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="titname" rightIndent="0.0" leftIndent="0.0" fontSize="10.5" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
     <paraStyle name="terp_default_Centre_8" rightIndent="0.0" leftIndent="0.0" fontSize="6.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
@@ -297,8 +303,8 @@ x rml openerp
 
 -->
 
-   <spacer length="2mm"/>
-   <blockTable colWidths="70.0,450.0" style="Table10">
+   <spacer length="24.5mm"/>
+<!--   <blockTable colWidths="70.0,450.0" style="Table10">
       <tr>
         <td>
           <para style="terp_default_8">
@@ -314,21 +320,22 @@ x rml openerp
 
         </td>
       </tr>
-    </blockTable> 
+    </blockTable> -->
+
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
     <pto>
 
    <pto_header><!-- Must be after setLang() -->
-    <blockTable colWidths="335,293,170" style="Table10">
+<!--    <blockTable colWidths="335,293,170" style="Table10">
     <tr>"terp_default_8"
         <td><para style="terp_default_8"><b>[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]] </b></para></td>
         <td><para style="terp_default_8"><b>[[('%s'% (o.partner_id.phone) or removeParentNode('para')) ]]</b></para></td>
         <td><para style="terp_default_8"><b>[[ (o.company_id.partner_id.vat and ('        %s-%s-%s'%(o.company_id.partner_id.vat[2:3],o.company_id.partner_id.vat[3:11],o.company_id.partner_id.vat[11:12])) or removeParentNode('para')) ]]</b></para></td>
     
     </tr>
-    </blockTable>
+    </blockTable>-->
 
     </pto_header>
 
@@ -350,7 +357,7 @@ x rml openerp
     <section>
       <para style="terp_default_2">[[ repeatIn(o.invoice_line,'l') ]]</para>
 
-      <blockTable colWidths="5.0,235.0,55.0,80.0,85.0" style="Table8">
+      <blockTable colWidths="5.0,215.0,35.0,80.0,85.0" style="Table8">
         <tr>
           <td>
             <para style="terp_default_9">[[ ]]</para>
