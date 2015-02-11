@@ -7,7 +7,7 @@
 
    <pageGraphics>
 
-    <place x="15.0mm" y="-7mm" width="270.0mm"  height="54mm">
+    <place x="15.0mm" y="-3mm" width="270.0mm"  height="54mm">
     <blockTable colWidths="45.0,405.0,85.0" style="Table10">
       <tr>
         <td>
@@ -16,7 +16,7 @@
           </para>
         </td>
         <td>
-          <para style="terp_default_9">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
+          <para style="terp_default_9"></para> 
         </td>
         <td>
           <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed) ]]</para>
@@ -104,32 +104,44 @@ x rml openerp
       </place>
 
       
-     <drawString x="0.3cm" y="22.9cm">
+     <drawString x="0.3cm" y="22.5cm">
          Valencia
      </drawString>
-     <drawString x="2.7cm" y="22.9cm">
+     <drawString x="2.8cm" y="22.5cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]]
      </drawString>
  
-     <drawString x="3.6cm" y="22.9cm">
+     <drawString x="3.7cm" y="22.5cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]]
      </drawString>
 
-     <drawString x="4.8cm" y="22.9cm">
+     <drawString x="4.8cm" y="22.5cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]
      </drawString>
 
-	<place x="6cm" y="21.8cm" width="14cm"  height="1cm">
+	<place x="6cm" y="21.35cm" width="14cm"  height="1cm">
     		<blockTable colWidths="14cm" style="Table11">
       			<tr><td><para style="titname" vAlign="BOTTOM">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
 		</blockTable>
 	</place>
        
-        <place x="3.7cm" y="20.2cm" width="16cm"  height="1.5cm">
+        <place x="3.7cm" y="19.9cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ o.partner_id.street + " " + o.partner_id.street2 + " " + o.partner_id.city + " " + o.partner_id.zip + " " + o.partner_id.state_id.name + " Venezuela"  ]]</para></td></tr>
                 </blockTable>
         </place>
+
+        <place x="17.3cm" y="18.9cm" width="16cm"  height="1.5cm">
+                <blockTable colWidths="14cm" style="Table7">
+                        <tr><td><para style="terp_default_8"><b>[[ (o.partner_id.vat and ('        %s-%s-%s'%(o.partner_id.vat[2:3],o.partner_id.vat[3:11],o.partner_id.vat[11:12])) or removeParentNode('para'))  ]]</b></para></td></tr>
+                </blockTable>
+        </place>
+
+	<place x="2.5cm" y="3.3cm" width="14cm"  height="1.5cm">
+                <blockTable colWidths="14cm" style="Table7">
+                        <tr><td><para style="terp_default_8"><b>[[ o.amount_to_text.replace("M. E."," ").replace("VEB","CON")  ]]</b></para></td></tr>
+                </blockTable>
+        </place>	
 
     </pageGraphics>
     </pageTemplate>
@@ -303,7 +315,7 @@ x rml openerp
 
 -->
 
-   <spacer length="24.5mm"/>
+   <spacer length="27mm"/>
 <!--   <blockTable colWidths="70.0,450.0" style="Table10">
       <tr>
         <td>
@@ -345,7 +357,7 @@ x rml openerp
 
         <td><para style="terp_default_8"><b>[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]] </b></para></td>
         <td><para style="terp_default_8"><b>[[('%s'% (o.partner_id.phone) or removeParentNode('para')) ]]</b></para></td>
-		<td><para style="terp_default_8"><b>[[ (o.partner_id.vat and ('        %s-%s-%s'%(o.partner_id.vat[2:3],o.partner_id.vat[3:11],o.partner_id.vat[11:12])) or removeParentNode('para')) ]]</b></para></td>
+		<td><para style="terp_default_8"><b></b></para></td>
       </tr>
     </blockTable>
 

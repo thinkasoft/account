@@ -7,7 +7,7 @@
 
    <pageGraphics>
 
-    <place x="15.0mm" y="-1.0mm" width="270.0mm"  height="56mm">
+    <place x="15.0mm" y="1mm" width="270.0mm"  height="56mm">
     <blockTable colWidths="45.0,405.0,85.0" style="Table10">
       <tr>
         <td>
@@ -16,7 +16,7 @@
           </para>
         </td>
         <td>
-          <para style="Comentario">[[o.amount_to_text.replace("M. E."," ").replace("VEB","CON")]]</para> 
+          <para style="Comentario"></para> 
         </td>
         <td>
           <para style="terp_default_Right_9">[[ formatLang(o.amount_untaxed) ]]</para>
@@ -103,36 +103,42 @@
       </place>
 
       
-     <drawString x="0.8cm" y="23.1cm">
+     <drawString x="0.8cm" y="22.9cm">
          Valencia
      </drawString>
-     <drawString x="2.8cm" y="23.1cm">
+     <drawString x="3cm" y="22.9cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]]
      </drawString>
  
-     <drawString x="3.8cm" y="23.1cm">
+     <drawString x="4cm" y="22.9cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]]
      </drawString>
 
-     <drawString x="5.1cm" y="23.1cm">
+     <drawString x="5.1cm" y="22.9cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]
      </drawString>
 
-	<place x="6.5cm" y="22cm" width="14cm"  height="1cm">
+	<place x="6.5cm" y="21.8cm" width="14cm"  height="1cm">
     		<blockTable colWidths="14cm" style="Table11">
       			<tr><td><para style="titname">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
 		</blockTable>
 	</place>
 
-        <place x="3.7cm" y="20.7cm" width="16cm"  height="1.5cm">
+        <place x="3.7cm" y="20.5cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ o.partner_id.street + " " + o.partner_id.street2 + " " + o.partner_id.city + " " + o.partner_id.zip + " " + o.partner_id.state_id.name + " Venezuela"  ]]</para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="17.7cm" y="19.8cm" width="16cm"  height="1.5cm">
+	<place x="17.7cm" y="19.5cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table7">
                         <tr><td><para style="terp_default_8"><b>[[ (o.partner_id.vat and ('        %s-%s-%s'%(o.partner_id.vat[2:3],o.partner_id.vat[3:11],o.partner_id.vat[11:12])) or removeParentNode('para'))  ]]</b></para></td></tr>
+                </blockTable>
+        </place>
+
+	<place x="2cm" y="3.5cm" width="14cm"  height="1.5cm">
+                <blockTable colWidths="14cm" style="Table7">
+                        <tr><td><para style="terp_default_8"><b>[[ o.amount_to_text.replace("M. E."," ").replace("VEB","CON")  ]]</b></para></td></tr>
                 </blockTable>
         </place>
 
@@ -290,7 +296,7 @@
     <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
  
 
-   <spacer length="20mm"/>
+   <spacer length="22mm"/>
     <para style="terp_default_8">
       <font color="white"> </font>
     </para>
