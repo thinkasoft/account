@@ -332,7 +332,7 @@
     <section>
       <para style="terp_default_2">[[ repeatIn(o.invoice_line,'l') ]]</para>
 
-      <blockTable colWidths="30.0,210.0,60.0,80.0,85.0" style="Table8">
+      <blockTable colWidths="30.0,210.0,53.0,80.0,85.0" style="Table8">
         <tr>
           <td>
             <para style="terp_default_9">[[ ]]</para>
