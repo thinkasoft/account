@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <document filename="Financial Report.pdf">
   <template title="Financial Report" author="OpenERP S.A. (sales@openerp.com)" allowSplitting="20">
     <pageTemplate id="first">
@@ -168,10 +168,10 @@
     </para>
       <blockTable colWidths="122.0,122.0,122.0,122.0" style="Table2_header">
       <tr>
-        <td><para style="terp_tblheader_General_Centre">Chart of Accounts</para></td>
-        <td><para style="terp_tblheader_General_Centre">Fiscal Year</para></td>
-        <td><para style="terp_tblheader_General_Centre">Filter By [[ get_filter(data)!='No Filters' and get_filter(data) ]]</para></td>
-        <td><para style="terp_tblheader_General_Centre">Target Moves</para></td>
+        <td><para style="terp_tblheader_General_Centre">Empresa</para></td>
+        <td><para style="terp_tblheader_General_Centre">Año Fiscal</para></td>
+        <td><para style="terp_tblheader_General_Centre">Filtro [[ get_filter(data)!='Sin Filtros' and get_filter(data) ]]</para></td>
+        <td><para style="terp_tblheader_General_Centre">Movimientos</para></td>
       </tr>
     <tr>
        <td><para style="terp_default_Centre_8">[[ get_account(data) or removeParentNode('para') ]]</para></td>
@@ -211,17 +211,17 @@
         <font color="white"> </font>
     </para>
     <!-- table with debit/credit displayed -->
-    <blockTable colWidths="210.0,90.0,90.0,100.0" style="Table_Account_Line_Title">
+    <blockTable colWidths="195.0,105.0,105.0,110.0" style="Table_Account_Line_Title">
       [[ data['form']['debit_credit'] == 1 or removeParentNode('blockTable') ]]
       <tr>
         <td>
-          <para style="terp_default_Bold_9">Name</para>
+          <para style="terp_default_Bold_9">Descripción</para>
         </td>
          <td>
-          <para style="terp_tblheader_Details_Right">Debit</para>
+          <para style="terp_tblheader_Details_Right">Debito</para>
         </td>
           <td>
-          <para style="terp_tblheader_Details_Right">Credit</para>
+          <para style="terp_tblheader_Details_Right">Credito</para>
         </td>
         <td>
           <para style="terp_tblheader_Details_Right">Balance</para>

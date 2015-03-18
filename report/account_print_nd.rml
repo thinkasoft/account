@@ -7,7 +7,7 @@
 
    <pageGraphics>
 
-    <place x="15.0mm" y="110.0mm" width="270.0mm"  height="56mm">
+    <place x="13.0mm" y="112mm" width="270.0mm"  height="56mm">
     <blockTable colWidths="35.0,450.0,85.0" style="Table10">
       <tr>
         <td>
@@ -93,70 +93,71 @@
       </place>
 
       
-     <drawString x="15.4cm" y="25.9cm">
+     <drawString x="15.1cm" y="25.7cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[8:10]))]]
      </drawString>
  
-     <drawString x="16.4cm" y="25.9cm">
+     <drawString x="16.1cm" y="25.7cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[5:7]))]]
      </drawString>
 
-     <drawString x="17.4cm" y="25.9cm">
+     <drawString x="17.4cm" y="25.7cm">
          [[ formatLang(o.date_invoice,date=True) and ('%s '%(o.date_invoice[0:4]))]]
      </drawString>
 
 
 
-        <place x="17.5cm" y="23cm" width="8cm"  height="1cm">
+        <place x="17.5cm" y="23.2cm" width="8cm"  height="1cm">
                 <blockTable colWidths="8cm" style="Table11">
                         <tr><td><para style="titname">[[ (o.company_id.partner_id.vat and ('        %s-%s-%s'%(o.company_id.partner_id.vat[2:3],o.company_id.partner_id.vat[3:11],o.company_id.partner_id.vat[11:12])) or removeParentNode('para')) ]]</para></td></tr>
                 </blockTable>
         </place>
 
 
-	<place x="5.5cm" y="23cm" width="16cm"  height="1cm">
+	<place x="5.5cm" y="23.1cm" width="16cm"  height="1cm">
     		<blockTable colWidths="16cm" style="Table11">
       			<tr><td><para style="titname">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]</para></td></tr>
 		</blockTable>
 	</place>
 
-        <place x="5.5cm" y="22cm" width="16cm"  height="1.5cm">
+        <place x="5.5cm" y="22.2cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ o.partner_id.street + " " + o.partner_id.street2 + " " + o.partner_id.city + " " + o.partner_id.zip + " " + o.partner_id.state_id.name + " Venezuela"  ]]</para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="5.5cm" y="21cm" width="16cm"  height="1.5cm">
+	<place x="3.7cm" y="21.4cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ ('%s'% (o.partner_id.phone) or removeParentNode('para'))  ]]</para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="4.0cm" y="20cm" width="16cm"  height="1.5cm">
+	<place x="3.7cm" y="20.8cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ (o.payment_term and o.payment_term.note and format(o.payment_term and o.payment_term.note)) or removeParentNode('para') ]]</para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="6.0cm" y="20cm" width="16cm"  height="1.5cm">
+	<place x="5.7cm" y="20.5cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion"></para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="9.0cm" y="20cm" width="16cm"  height="1.5cm">
+
+	<place x="11.0cm" y="20.8cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ o.date_document ]]</para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="15.0cm" y="20cm" width="16cm"  height="1.5cm">
+	<place x="15.7cm" y="20.8cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ o.amount_total ]]</para></td></tr>
                 </blockTable>
         </place>
 
-	<place x="2.0cm" y="14.6cm" width="16cm"  height="1.5cm">
+	<place x="2.0cm" y="14.7cm" width="16cm"  height="1.5cm">
                 <blockTable colWidths="14cm" style="Table11">
                         <tr><td><para style="direccion">[[ o.amount_to_text.replace("M. E."," ").replace("VEB","CON") ]]</para></td></tr>
                 </blockTable>
@@ -324,11 +325,11 @@
     <pto>
 
 
-<spacer length="2mm"/>
+<spacer length="1mm"/>
     <section>
       <para style="terp_default_2">[[ repeatIn(o.invoice_line,'l') ]]</para>
 
-      <blockTable colWidths="340.0,60.0,90.0,85.0" style="Table8">
+      <blockTable colWidths="330.0,45.0,90.0,90.0" style="Table8">
         <tr>
           <td>
             <para style="direccion">[[ l.name ]]</para>
