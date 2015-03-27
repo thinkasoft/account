@@ -125,7 +125,7 @@ x rml openerp
 		</blockTable>
 	</place>
 
-	<place x="17.4cm" y="19.39cm" width="16cm"  height="1.5cm">
+	<place x="17.4cm" y="19.38cm" width="16cm"  height="1.55cm">
                 <blockTable colWidths="14cm" style="Table7">
                         <tr><td><para style="terp_default_8"><b>[[ (o.partner_id.vat and ('        %s-%s-%s'%(o.partner_id.vat[2:3],o.partner_id.vat[3:11],o.partner_id.vat[11:12])) or removeParentNode('para'))  ]]</b></para></td></tr>
                 </blockTable>
